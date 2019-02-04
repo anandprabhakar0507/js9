@@ -36,8 +36,7 @@
   <title>JS9</title>
 </head>
 <body>
-    <button class="btn" border="2px solid green" type="button" onclick="toggleFullScreenMode('dhtmlwindowholder');
-       return false;">Fullscreen/Not fullscreen</button>
+   
        <script>
        function toggleFullScreenMode(id)
 {
@@ -64,8 +63,11 @@ document.webkitCancelFullScreen();
 
 </script>
     <div id="centerdiv">
+        <button class="btn" border="2px solid green" type="button" onclick="toggleFullScreenMode('JS9');
+       return false;">Fullscreen/Not fullscreen</button>
     <div class="JS9Menubar"></div>
     <div class="JS9"></div>
+       
     <div style="margin-top: 2px;"><div class="JS9Colorbar"></div></div>
     </div>
     <script type="text/javascript">
