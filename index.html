@@ -36,11 +36,12 @@
   <title>JS9</title>
 </head>
 <body>
-    <button class="btn" border="2px solid green" type="button" onclick="toggleFullScreenMode();
-       return false;">Fullscreen/Not fullscreen <i class="entypo-resize-full"></i></button>
+    <button class="btn" border="2px solid green" type="button" onclick="toggleFullScreenMode('centerdiv');
+       return false;">Fullscreen/Not fullscreen</button>
        <script>
-       function toggleFullScreenMode()
+       function toggleFullScreenMode(id)
 {
+var element = document.getElementById(id);
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
