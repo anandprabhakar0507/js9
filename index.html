@@ -36,17 +36,29 @@
   <title>JS9</title>
 </head>
 <body>
-   
-     
-<script type="text/javascript">
-  function goFullscreen(id) {
-    var element = document.getElementById(id);
-    if (element.mozRequestFullScreen) {      
-      element.mozRequestFullScreen();} 
-else if (element.webkitRequestFullScreen) {
-           element.webkitRequestFullScreen(); }
-  } 
-     
+       <script>
+       function toggleFullScreenMode(id)
+{
+var element = document.getElementById(id);
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+(!document.mozFullScreen && !document.webkitIsFullScreen)) {
+if (document.documentElement.requestFullScreen) {
+document.documentElement.requestFullScreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullScreen) {
+document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+}
 </script>
     <div align="center" id="centerdiv">
         <button class="btn" border="2px solid green" type="button" onclick="goFullscreen('centerdiv');
