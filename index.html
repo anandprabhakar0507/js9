@@ -37,33 +37,19 @@
 </head>
 <body>
    
-       <script>
-       function toggleFullScreenMode(id)
-{
-var element = document.getElementById(id);
-if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-(!document.mozFullScreen && !document.webkitIsFullScreen)) {
-if (document.documentElement.requestFullScreen) {
-document.documentElement.requestFullScreen();
-} else if (document.documentElement.mozRequestFullScreen) {
-document.documentElement.mozRequestFullScreen();
-} else if (document.documentElement.webkitRequestFullScreen) {
-document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-}
-} else {
-if (document.cancelFullScreen) {
-document.cancelFullScreen();
-} else if (document.mozCancelFullScreen) {
-document.mozCancelFullScreen();
-} else if (document.webkitCancelFullScreen) {
-document.webkitCancelFullScreen();
-}
-}
-}
-
+     
+<script type="text/javascript">
+  function goFullscreen(id) {
+    var element = document.getElementById(id);
+    if (element.mozRequestFullScreen) {      
+      element.mozRequestFullScreen();} 
+else if (element.webkitRequestFullScreen) {
+           element.webkitRequestFullScreen(); }
+  } 
+     
 </script>
     <div align="center" id="centerdiv">
-        <button class="btn" border="2px solid green" type="button" onclick="toggleFullScreenMode('JS9');
+        <button class="btn" border="2px solid green" type="button" onclick="goFullscreen('JS9');
        return false;">Fullscreen/Not fullscreen</button>
     <div class="JS9Menubar"></div>
     <div class="JS9"></div>
